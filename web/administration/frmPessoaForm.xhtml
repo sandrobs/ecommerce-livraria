@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../ModeloSistema.xhtml">
+
+            <ui:define name="content">
+                
+                <f:view>
+
+
+                    <h:form class="templatemo-content-widget white-bg w600">
+                        
+                        <div class="panel-heading">
+                            <h1><h:outputText value="Pessoa"/></h1>
+                        </div>
+                        
+                        <div class="row form-group">
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <h:outputLabel value="Código:" for="pesCodigo" />
+                                <h:inputText id="pesCodigo2" value="#{pessoaBean.codigo}" title="Código" class="form-control desabilitado" readonly="true"/>
+                            </div>
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <h:outputLabel value="Nome:" for="pesNome" />
+                                <h:inputText id="pesNome" value="#{pessoaBean.pessoa.pesNome}" title="Nome" class="form-control"/>
+                            </div>
+                        </div>
+                        
+                        <div class="row form-group">
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <h:outputLabel value="Sobrenome:" for="pesSobrenome" />
+                                <h:inputText id="pesSobrenome" value="#{pessoaBean.pessoa.pesSobrenome}" title="Sobrenome" class="form-control"/>
+                            </div>
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <h:outputLabel value="CPF:" for="pesCPF" />
+                                <h:inputText id="pesCPF" value="#{pessoaBean.pessoa.pesCPF}" title="CPF" class="form-control"/>
+                            </div>
+                        </div>
+                        
+                        <div class="row form-group">
+                            <div class="col-lg-6 col-md-6 form-group">
+
+                                <h:outputLabel value="Email:" for="pesEmail" />
+                                <h:inputText id="pesEmail" value="#{pessoaBean.pessoa.pesEmail}" title="Email" class="form-control"/>
+                            </div>
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <h:outputLabel value="Telefone:" for="pesFone" />
+                                <h:inputText id="pesFone" value="#{pessoaBean.pessoa.pesFone}" title="Telefone" class="form-control"/>
+                            </div>
+                        </div>
+                        
+                        <div class="row form-group">
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <h:outputLabel value="Senha:" for="pesSenha" />
+                                <h:inputText id="pesSenha" value="#{pessoaBean.pessoa.pesSenha}" title="Senha" class="form-control"/>
+                            </div>
+                        </div>
+                        
+                        <h:inputHidden id="pesCodigo" value="#{pessoaBean.pessoa.pesCodigo}"/>
+                        <h:inputHidden id="pesSenha" value="#{pessoaBean.pessoa.pesSenha}"/>
+                        <h:inputHidden id="pesTipo" value="#{pessoaBean.pessoa.pesTipo}"/>
+                        
+                        <div class="form-group text-right">
+                                <h:commandButton action="#{pessoaBean.salvarUsuario()}" value="Salvar" class="templatemo-blue-button"/> &nbsp;
+                                <h:button outcome="frmPessoaListar" value="Cancelar" class="templatemo-white-button"/>
+                        </div>
+                        
+                    </h:form>
+                </f:view>
+
+                
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

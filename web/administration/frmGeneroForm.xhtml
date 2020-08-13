@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./../ModeloSistema.xhtml">
+
+            <ui:define name="content">
+                
+                
+                <f:view>
+
+                    <h:form  id="genform" class="templatemo-content-widget white-bg w600">
+                        
+                        <h:messages>
+                            
+                        </h:messages>
+                        
+                        <div class="panel-heading">
+                            <h1><h:outputText value="Gênero"/></h1>
+                        </div>
+                        
+                            <div class="row form-group">
+                                <div class="col-lg-6 col-md-6 form-group">
+                                    <p:outputLabel value="Código:" for="genCodigo" />
+                                    <p:inputText id="genCodigo" value="#{generoBean.genero.genCodigo}" title="GenCodigo" class="form-control desabilitado" readonly="true" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-lg-6 col-md-6 form-group">
+                                    <p:outputLabel value="Descrição:" for="genDescricao" />
+                                    <p:inputText id="genDescricao" required="true" value="#{generoBean.genero.genDescricao}" title="GenDescricao" class="form-control"/>
+                                </div>
+                            </div>
+                            <div class="form-group text-right">
+                                <h:commandButton action="#{generoBean.salvar()}" value="Salvar" class="templatemo-blue-button"/> &nbsp;
+                                
+                                <h:button outcome="frmGeneroListar" value="Cancelar" class="templatemo-white-button"/>
+                            </div>
+                        
+                    </h:form>
+                </f:view>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

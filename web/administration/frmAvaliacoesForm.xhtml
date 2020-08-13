@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./../ModeloSistema.xhtml">
+
+            <ui:define name="content">
+                
+                <f:view>
+
+
+                    <h:form>
+                        <div class="panel-heading">
+                            <h1><h:outputText value="Avaliação: "/><b><h:outputText value="#{avaliacaoBean.avaliacao.produto.prdTitulo}" title="Produto"/></b></h1>
+                        </div>
+                        
+                        <div class="row form-group">
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <b><h:outputText value="Código: "/></b>
+                                <h:outputText value="#{avaliacaoBean.avaliacao.avaCodigo}" title="Código"/>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="row form-group">
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <b><h:outputText value="Título: "/></b>
+                                <h:outputText value="#{avaliacaoBean.avaliacao.avaTitulo}" title="Título"/>
+                            </div>
+                        </div>
+                        
+                        <div class="row form-group">
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <b><h:outputText value="Nota: "/></b>
+                                <h:outputText value="#{avaliacaoBean.avaliacao.avaNota}" title="Nota"/>
+                            </div>
+                        </div>
+                        
+                        <div class="row form-group">
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <b><h:outputText value="Descrição: "/></b>
+                                <h:outputText value="#{avaliacaoBean.avaliacao.avaDescricao}" title="Descrição"/>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group text-right">
+                                <h:commandButton action="#{avaliacaoBean.aprovar()}" value="Aprovar" class="templatemo-blue-button"/> &nbsp;
+                                
+                                <h:commandButton action="#{avaliacaoBean.naoAprovar()}" value="Reprovar" class="templatemo-orange-button"/> &nbsp;
+                                
+                                <h:button outcome="frmAvaliacoesListar" value="Cancelar" class="templatemo-white-button"/>
+                        </div>
+                        
+                    </h:form>
+                </f:view>
+
+                
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

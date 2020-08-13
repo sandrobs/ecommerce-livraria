@@ -1,0 +1,437 @@
+#neemu_ac_prods {
+    margin-top: 10px;
+    padding-top: 0 !important;
+}
+
+ul.ac_results li.li_sugestaoprod:after {
+	border-bottom: 1px solid #f2f2f2;
+	content: "";
+	clear: both;
+	display: block;
+	margin-left: 6px;
+	margin-top: 5px;
+	width: 398px;
+}
+
+#neemu_ac_prods:before {
+    border-top: 1px solid #f2f2f2;
+    content: "";
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+/* alteração no site do submarino */
+
+div.mainSearch_neemu_autocomplete fieldset
+{
+	border-bottom-left-radius: 0px!important;
+	border-bottom-right-radius: 0px!important;
+}
+
+div.mainSearch_neemu_autocomplete input[type="search"],
+div.mainSearch_neemu_autocomplete input[type="text"]
+{
+	color: #9A9A9A!important;
+	padding-left: 13px!important;
+	font-size: 14px!important;
+}
+
+div.mainSearch input[type="search"],
+div.mainSearch input[type="text"]
+{
+	padding-left: 13px!important;
+	font-size: 14px!important;
+}
+
+/* fim da alteração no site do submarino */
+
+span.neemuac-category
+{
+    color: #00adef;
+}
+
+div.content_all_type2
+{
+	/*background: url(../imagens/busca_autocomplete.gif) no-repeat left bottom;*/
+	/*margin-right: 20px;*/
+}
+
+div.content_all_type2_intern
+{
+	/*background: url(../imagens/busca_autocomplete.gif) no-repeat right bottom;*/
+	/*margin-left: 20px;
+	margin-right: -20px;*/
+}
+
+div.content_all_type2 div.content_sugest
+{
+	/*margin-left: -22px;*/
+}
+
+div.content_all_type2 div.content_prods
+{
+	padding: 5px 0 15px 0;
+}
+
+div.content_all_type2 div.content_prods div#neemu_ac_sugestprods
+{
+	margin-left: 0px;
+	/*margin-right: 20px;*/
+	padding-top: 9px;
+	clear: both;
+}
+
+div.content_all_type2 a.close_sugest
+{
+	/*color: #fff;
+	font-size: 12px;
+	float: right;*/
+	display: none;
+}
+div.content_all_type2 a.close_sugest:hover
+{
+	text-decoration: none;
+}
+
+div.content_all_type2 li
+{
+	/*padding-left: 0 !important;*/
+}
+
+div.content_all_type2 span.seta_dir
+{
+	display: none!important;
+}
+
+div.content_all_type2 li .neemu_ac_container_sugestoes
+{
+	/*padding-left: 20px;*/
+}
+
+div.content_all_type2 li .neemu_ac_container
+{
+	padding-left: 20px;
+}
+
+div.content_all_type1
+{
+	width: 100%;
+	height: 440px;
+	/*overflow: auto;*/
+	border-top: 2px solid #C7C7C7;
+}
+
+div.content_all_type1 div.content_sugest
+{
+	width: 51%;
+	height: 100%;
+	float: left;
+	padding: 0;
+	margin: 0;
+	background: url(../imagens/busca_autocomplete.gif) no-repeat left bottom;
+}
+
+div.content_all_type1 div.content_sugest_intern
+{
+	padding: 5px 0 15px 2px;
+}
+
+div.content_all_type1 div.content_sugestprods
+{
+	width: 49%;
+	height: 100%;
+	float: left;
+	padding: 0;
+	margin: 0;
+	background: url(../imagens/busca_autocomplete.gif) no-repeat right bottom;
+}
+
+div.content_all_type1 div.content_sugestprods_intern
+{
+	border-left: 2px solid #00adef;
+	padding: 10px 2px 10px 0;
+	height: 420px;
+}
+
+div.content_all_type1 div.content_sugestprods label.titulo_sugestprods
+{
+	color: #9A9A9A;
+	font-size: 12px;
+	margin: 0 10px 0 10px;
+}
+
+div.content_all_type1 div.content_sugestprods label.search_sugestprods
+{
+    color: #00adef;
+    font-size: 13px;
+    margin: 5px 10px 10px 10px;
+    font-weight: bold;
+    float: left;
+    width: 100%;
+}
+
+div.content_all_type1 li.li_sugestprods
+{
+	padding: 7px 10px 0 10px;
+	margin: 0;
+	min-height: 113px;
+	overflow: hidden;
+}
+
+div.content_all_type1 div.content_sugest li.ac_over,
+div.content_all_type1 div.content_sugest li.ac_over span.ac_match,
+div.content_all_type2 div.content_sugest li.ac_over,
+div.content_all_type2 div.content_sugest li.ac_over span.ac_match,
+div.content_sugest li.ac_over span.neemuac-category
+{
+	background-color: #00acf2 !important;
+	color: #fff !important;
+}
+
+div.content_all_type1 div.content_sugestprods li.ac_over,
+div.content_all_type1 div.content_sugestprods li.ac_over span.ac_match,
+div.content_all_type2 div.content_prods li.ac_over,
+div.content_all_type2 div.content_prods li.ac_over span.ac_match
+{
+	border-left: 4px solid #00AEDF;
+    padding-left: 0;
+}
+
+.li_sugestaoprod.ac_over .nome_autocomplete,
+.li_sugestaoprod.ac_over .neemu_ac_parcelas {
+	color: #00aedf !important;
+}
+
+div.content_all_type1 div.content_sugestprods li.ac_over .content
+{
+	/*border-right: 5px solid #00adef;*/
+}
+
+div.content_all_type1 a.close_sugest
+{
+	/*color: #00adef;
+	font-size: 13px;
+	float: right;*/
+	display: none;
+}
+div.content_all_type1 a.close_sugest:hover
+{
+	text-decoration: none;
+}
+
+ul.ac_results
+{
+	list-style: none;
+	position: absolute;
+	z-index: 999999;
+	display: none;
+	font-family: Arial;
+	background-color: #FFFFFF!important;
+	border: 1px #ccc solid;
+	border-top: none;
+	width: 397px !important;
+}
+
+ul.ac_results .label
+{
+	background: url("../images/sprite-novo-layout.png") no-repeat scroll -803px -293px transparent !important;
+	color: #333;
+	float: left;
+	font-size: 18px;
+	margin: 4px 3px -9px 0;
+	padding: 3px 24px;
+	}
+ul.ac_results li
+{
+	float: none !important;
+	padding: 3px 8px;
+	color: #666666;
+	text-align: left;
+	font-size: 14px;
+	/*overflow: auto;*/
+}
+ul.ac_results li,
+ul.ac_results li *
+{
+	cursor: pointer;
+}
+ul.ac_results div.imagem_autocomplete img
+{
+	width: 100px;
+}
+
+ul.ac_results li.ac_over, ul.ac_results li.ac_over span.ac_match
+{
+	font-weight: normal !important;
+}
+
+.ac_over {
+	float: none !important;
+	background: #fff !important; 
+}
+
+ul.ac_results span.seta_dir
+{
+	float: right;
+	*float: none;
+	color: #fff;
+	font-size: 16px;
+	margin-left: 4px;
+}
+
+/* over dos itens */
+
+span.ac_match
+{
+	color: #333;
+	font-weight: normal;
+}
+
+/* resultados de sugestão de autocomplete */
+
+ul.ac_results li .neemu_ac_container_sugestoes
+{
+	min-height: 20px;
+}
+ul.ac_results li .neemu_ac_container_sugestoes .nome_autocomplete
+{
+	padding: 3px 0;
+	font-size: 14px;
+	line-height: 15px;
+}
+
+ul.ac_results li.li_sugestao
+{
+	padding: 1px 10px;
+	margin: 0;
+	color: #999;
+	/*overflow: auto;*/
+}
+
+/* fim dos resultados de sugestão de autocomplete */
+
+/* resultados de produtos */
+
+ul.ac_results li .neemu_ac_container
+{
+	clear: both;
+}
+ul.ac_results li .neemu_ac_container .imagem_autocomplete
+{
+	float: left;
+	margin-top: 13px;
+}
+ul.ac_results li .neemu_ac_container .nome_autocomplete
+{
+	padding-top: 20px;
+	margin-left: 115px;
+	font-size: 13px;
+	line-height: 13px;
+}
+ul.ac_results li .neemu_ac_container .preco_autocomplete
+{
+	padding-top: 8px;
+	margin-left: 115px;
+	color: #00adef;
+	font-size: 14px;
+}
+
+ul.ac_results li .neemu_ac_container .neemu_ac_preco_de
+{
+    font-size: 11px;
+    font-weight: normal;
+}
+
+ul.ac_results li .neemu_ac_container .neemu_ac_preco_de strong
+{
+    text-decoration:line-through;
+    font-weight:normal;
+}
+
+ul.ac_results li .neemu_ac_container .neemu_ac_preco_por
+{
+    font-size: 18px;
+    font-weight: bold;
+    clear: both;
+}
+ul.ac_results li .neemu_ac_container .neemu_ac_parcelas
+{
+    margin:2px 0 5px 0;
+    font-size: 11px;
+    color: #666666;
+}
+ul.ac_results li .neemu_ac_container .rating_autocomplete
+{
+	padding-top: 5px;
+	height: 22px;
+}
+ul.ac_results li .neemu_ac_container .rating_autocomplete img
+{
+	float: left;
+	width: 85px;
+}
+ul.ac_results li .neemu_ac_container .rating_autocomplete span
+{
+	float: left;
+	margin-top: 2px;
+	font-size: 11px;
+	color: #ccc;
+}
+ul.ac_results li .neemu_ac_container span.neemuac_unavailableprod
+{
+    padding-top: 8px;
+    margin-left: 15px;
+    color: #c00;
+    float: left;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+ul.ac_results li.li_sugestaoprod
+{
+	padding: 3px 40px 0 4px;
+	min-height: 86px;
+	overflow: hidden;
+}
+
+ul.ac_results li.li_sugestaoprod:last-child {
+	border-bottom: none !important;
+}
+
+
+ul.ac_results div.neemuac-loading,
+ul.ac_results div.neemuac-no-results
+{
+    padding: 25px 5px 5px 0;
+    text-align: center;
+    clear: both;
+}
+
+ul.ac_results div.neemuac-loading
+{
+    height: 35px;
+}
+
+ul.ac_results div.neemuac-no-results
+{
+    color: #333333;
+    font-size: 13px;
+}
+
+/* fim dos resultados de produtos */
+
+/* Sombra do input do submarino quando o autocomplete aparece */
+
+ul.ac_results,
+.autocomplete-shadow {
+	-webkit-box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:    3px 3px 0 0 rgba(0, 0, 0, 0.1);
+	box-shadow:         3px 3px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.autocomplete-shadow {
+	border: 1px #ccc solid;
+	border-bottom: none;
+}
+
+/* fim da sombra do input do submarino quando o autocomplete aparece */

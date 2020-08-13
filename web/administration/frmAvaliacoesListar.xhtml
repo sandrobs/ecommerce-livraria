@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./../ModeloSistema.xhtml">
+            <ui:define name="content">
+                
+                <f:view>
+                    <h:form>   
+                    <table>
+                        <tr>
+                            <td>
+                                
+                                <div class="row form-group">
+                                    <div class="col-lg-6 col-md-6 form-group">
+                                        <p:outputLabel value="Status:" />
+                                        <h:selectOneMenu id ="teste" value="#{avaliacaoBean.statusConsulta}" title="ForPagTipo" class="form-control">
+                                            <f:selectItem itemLabel="Todos" itemValue="0"/>
+                                            <f:selectItem itemLabel="Pendente" itemValue="1"/>
+                                            <f:selectItem itemLabel="Aprovado" itemValue="2"/>
+                                            <f:selectItem itemLabel="Reprovados" itemValue="3"/>
+                                        </h:selectOneMenu>
+                                    </div>
+                                </div>
+
+                                <p></p>
+                                
+                                <h:commandButton value="Buscar" class="templatemo-blue-button" action="#{avaliacaoBean.teste()}" />
+
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                   
+                        
+                                    <p:dataTable id="avaliacoesTable" value="#{avaliacaoBean.avaliacoesFiltradas}" var="item">
+                                        <p:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Código"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.avaCodigo}"/>
+                                        </p:column>
+                                        <p:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Título"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.avaTitulo}"/>
+                                        </p:column>
+                                        <p:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Nota"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.avaNota}"/>
+                                        </p:column>
+                                        <p:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Produto"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.produto.prdTitulo}"/>
+                                        </p:column>
+                                        <p:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Cliente"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.pessoa.pesNome}"/>
+                                        </p:column>
+                                        <p:column headerText="Status">
+                                            <f:facet name="head">
+                                            </f:facet>
+                                            <h:outputText value="#{item.avaStatus}"/>
+                                        </p:column>
+                                        <p:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Opções"/>
+                                            </f:facet>
+                                            <h:commandLink action="#{avaliacaoBean.select()}" value="Avaliar" />
+                                        </p:column>
+                                    </p:dataTable>
+
+                                
+                            </td>
+                        </tr>
+                    </table>
+                    </h:form>
+                    
+                </f:view>
+                
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

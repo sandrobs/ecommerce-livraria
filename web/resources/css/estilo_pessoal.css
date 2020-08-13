@@ -1,0 +1,25 @@
+
+.w100 {
+    width: 100px;
+}
+
+.w50 {
+    width: 50px;
+}
+
+.w600 {
+    width: 600px;
+}
+
+.desabilitado {
+    background: #eee;
+    cursor: not-allowed;
+}
+
+.w100perc{
+    width: 100%;
+}
+
+.fleft {
+    float: left;
+}

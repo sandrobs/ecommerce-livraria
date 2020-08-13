@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./loja/css/style.css"/>
+        <link rel="stylesheet" href="../resources/loja/css/style.css" type="text/css" media="all" />
+        <h:outputScript library="loja/js/" name="jquery-1.4.1.min.js"/>
+        <h:outputScript library="loja/js/" name="jquery.jcarousel.pack.js"/>
+        <h:outputScript library="loja/js/" name="jquery-func.js"/>
+        <title>Undergound</title>
+    </h:head>
+
+    <h:body>
+      
+      <div class="shell">
+
+        <div id="header">
+          <h1 id="logo"><a href="home.xhtml">Underground</a></h1>
+
+          <!-- Cart -->
+          
+          <div id="cart"> <a href="frmCarrinho.xhtml" class="cart-link">Carrinho de Compra</a>
+            <div class="cl">&nbsp;</div>
+            <span>Itens: <strong>#{carrinhoBean.qtdeItens}</strong></span> &nbsp;&nbsp; <span>Total: <strong>R$250,99</strong></span>
+          </div>
+          <!-- End Cart -->
+          <!-- Navigation -->
+          <div id="navigation">
+            <ul>
+              <li><a href="home.xhtml" class="active">Inicial</a></li>
+              <li><a href="suporte.xhtml">Suporte</a></li>
+              <li><a href="minhaConta.xhtml">Minha Conta</a></li>
+              <li><a href="contato.xhtml">Contato</a></li>
+            </ul>
+          </div>
+          <!-- End Navigation -->
+          <!--visitante -->
+            <div id="saudacao" class="saudacaolink">
+              <a href="#"><span>Olá, Visitante</span></a>
+          </div>
+        </div>
+        <!-- End Header -->
+        <!-- Main -->
+        <script type="text/javascript">
+        
+            function objeto(){
+                
+                var output;
+                output = 'buscaprodutos.xhtml?descprd=';
+                output += document.getElementById('prdDescricao').value;
+                
+                return output;
+                
+            }
+        
+        </script>
+        
+        
+        <div id="main">
+          <div class="cl">&nbsp;</div>
+          <!-- Content -->
+          <div id="content">
+
+              <!-- Caixa de Busca -->
+              <div id="busca">
+                  
+                        <table align="center">
+                            <tr>
+                                <td>
+                                    <h:inputText id="prdDescricao" value="#{produtoBean.prdDescSearch}" class="campBusca" p:placeholder="Digite o título que deseja buscar..."/>
+                                </td>
+                                <td>
+                                    <div class="search-submit" onclick="javascript:location.href=objeto()">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Buscar
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    
+              </div>
+            <!-- Products -->
+            
+            <div id="content">
+                <ui:insert name="content">Content</ui:insert>
+            </div>
+            
+            <!-- End Products -->
+          </div>
+          <!-- End Content -->
+          <!-- Sidebar -->
+          <div id="sidebar">
+            <!-- Search -->
+            <div class="box search">
+              <h2>Oferta 24h<span></span></h2>
+              
+                <div class="box-content">  
+                    <div class="hoverzoom">
+                        <img src="http://img.submarino.com.br/produtos/01/00/item/119882/2/119882282_1GG.jpg"/>
+                        <div class="retina">
+                            <p></p>
+                            <p></p>
+                            <a href="detalheProduto.xhtml?id=10321">Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+            <!-- End Search -->
+            <!-- Categories -->
+            <div class="box categories">
+              <h2>Gêneros <span></span></h2>
+              <div class="box-content">
+                <ul>
+                    <ui:repeat value="#{generoBean.listageneros}" var="genero">
+                        
+                        <li><a title="#{genero.genDescricao}" href="buscaprodutos.xhtml?gen=#{genero.genCodigo}">#{genero.genDescricao}</a></li>
+
+                  </ui:repeat>
+                </ul>
+              </div>
+            </div>
+            <!-- End Categories -->
+          </div>
+          <!-- End Sidebar -->
+          <div class="cl">&nbsp;</div>
+        </div>
+        <!-- End Main -->
+        <!-- Side Full -->
+
+          <div class="side-full">
+          <!-- More Products -->
+          <!-- End More Products -->
+          <!-- Text Cols -->
+          <div class="cols">
+            <div class="cl">&nbsp;</div>
+            <div class="col">
+              <h3 class="ico ico1">Envio Imediato</h3>
+              <p>Assim que o pagamento do pedido for aprovado, nós já iniciaremos o processo de embalagem e envio da sua compra.</p>
+              
+            </div>
+            <div class="col">
+              <h3 class="ico ico2">Suporte</h3>
+              <p>Mande-nos um email com a sua dúvida, teremos a maior satisfação em lhe atender.</p>
+              
+            </div>
+            <div class="col">
+              <h3 class="ico ico3">Preços Especiais</h3>
+              <p>Sempre temos uma novidade em promoção, acompanhe!</p>
+              
+            </div>
+            <div class="col col-last">
+              <h3 class="ico ico4">Grande Variedade de Livros</h3>
+              <p>Estamos sempre em busca de novidades para todos os tipos de leitores</p>
+              
+            </div>
+            <div class="cl">&nbsp;</div>
+          </div>
+          <!-- End Text Cols -->
+        </div>
+        <!-- End Side Full -->
+        <!-- Footer -->
+        <div id="footer">
+          <p class="left"> <a href="home.xhtml">Inicial</a> <span>|</span> <a href="suporte.xhtml">Suporte</a> <span>|</span> <a href="minhaConta.xhtml">Minha Conta</a> <span>|</span> <a href="contato.xhtml">Contato</a> </p>
+          <p class="right"> &copy; 2015 Livraria Underground</p>
+        </div>
+        <!-- End Footer -->
+      </div>
+
+    </h:body>
+
+</html>

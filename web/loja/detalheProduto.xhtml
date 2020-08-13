@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        
+        <ui:composition template="./../ModeloLojaSimples.xhtml">
+
+            <ui:define name="content">
+                
+		<link rel="shortcut icon" type="image/png" href="http://isuba.s8.com.br/favicon.png"/>
+		<link rel="stylesheet" href="./detalhes_files/hue.css"/>
+                
+		<script src="./detalhes_files/jquery.js"></script>
+		<script src="./detalhes_files/onready.js"></script>
+		<script src="./detalhes_files/submarino.js"></script>
+		<script src="./detalhes_files/bvapi.js"></script>
+                
+                
+                <f:metadata>
+                    
+                    <f:viewParam name="id" value="#{carrinhoBean.prdcod}"/>
+                    
+                </f:metadata>
+                
+                
+                <h:form>
+                    
+                    <div class="grid-control">
+                        <section class="main-product" itemscope="itemscope" itemtype="http://schema.org/Product">
+                           <meta itemprop="description/mdcArea" content="productPage"/>
+                           <div class="grid-control grid-fix-m-10">
+                              <div class="pure-g">
+                                 <div class="pure-u-1-2">
+                                    <div class="mp-photos" data-component="imagem_produto">
+                                       <div class="mp-picture  ">
+                                              <img src="imgprodutos/#{carrinhoBean.detProduto.prdCodigo}.jpg" height="350px"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="pure-u-1-2">
+                                    <div class="details-product">
+                                       <div class="mp-title">
+                                           <h1 class="mp-tit-name prodTitle" title="Livro - #{carrinhoBean.detProduto.prdTitulo}">
+                                             <span itemprop="name">Livro - #{carrinhoBean.detProduto.prdTitulo}</span>
+                                          </h1>
+                                           <br />
+                                          <span class="a-cod-prod">
+                                          (Cód.<span itemprop="productID">#{carrinhoBean.detProduto.prdCodigo}</span>)
+                                          </span>
+                                       </div>
+                                       <div class="mp-details">
+                                          <form class="buy-form opened" action="http://sacola.submarino.com.br/checkout/" data-component="main-price" novalidate="novalidate" data-extended_warranty="false" data-department-id="309573" data-line-id="309771" data-subline-id="324582" itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer">
+                                             <div class="pure-g buy-float-wp">
+                                                <div class="pure-u-3-5" data-exclusive-marketplace="false" data-sku="122294828" style="display: block;">
+                                                   <br />
+                                                   <div class="mp-pb-item mp-pb-to mp-price" data-partner-value="R$ #{carrinhoBean.detProduto.prdPreco}">
+                                                      <span class="sales-price">Por </span><span itemprop="price">R$ #{carrinhoBean.detProduto.prdPreco}0</span>
+                                                   </div>
+                                                </div>
+                                                
+                                             </div>
+                                          </form>
+                                          <div hidden="hidden">
+                                             <div id="modal-confirm-sku" class="modal"></div>
+                                          </div>
+                                          <div class="box-with-partner">
+                                          </div>
+                                       </div>
+                                    </div>
+                                     <div class="details-product">
+                                         <div class="pure-u-2-5">
+                                            <div class="buy-box" data-component="buy-box">
+                                               <div class="product-stock-info">
+                                                   <div class="a-stock-info">#{carrinhoBean.existeEstoque}</div>
+                                               </div>
+                                            </div>
+                                         </div>
+                                     </div>
+                                     <br />
+                                     <div class="details-product">
+                                         <h:commandButton value="Comprar" class="buy-submit" action="#{carrinhoBean.adicionarCarrinho()}" style="font: bold 14px Arial"/>
+                                     </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </section>
+                     </div>
+                     <div id="neemurc_area01" class="grid-control"></div>
+                     <!--  <ui:include src="player.xhtml" /> -->
+                     <div class="grid-control">
+                        <div class="pure-g">
+                           <div class="pure-u-1">
+                              <div class="description product-features" id="productdetails">
+                                 <div class="topBox01 infoPBTit">
+                                    <div class="title-ficha">
+                                       <span class="spt-i-arrow-title"></span>
+                                       <h2 class="t-txt">
+                                          Informações do produto
+                                       </h2>
+                                    </div>
+                                 </div>
+                                 <div class="infoProdBox box01" itemprop="description">
+                                    <div class="chosenProds infoP">
+                                       <strong>
+                                           Livro - #{carrinhoBean.detProduto.prdTitulo}
+                                       </strong>
+                                    </div>
+                                    <div class="infoProd">
+                                        <p align="justify">#{carrinhoBean.detProduto.prdDescricao} <br /><br /><strong>Imagem meramente ilustrativa.</strong></p>
+                                    </div>
+                                 </div>
+                                 <div class="area-tecnica">
+                                    <section class="ficha-tecnica">
+                                       <span class="t-txt" id="informacoes-tecnicas">
+                                       Informações Técnicas
+                                       </span>
+                                       <table>
+                                          <tbody>
+                                             <tr>
+                                                <th>
+                                                   Título
+                                                </th>
+                                                <td>
+                                                   #{carrinhoBean.detProduto.prdTitulo}
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <th>
+                                                   ISBN
+                                                </th>
+                                                <td>
+                                                   #{carrinhoBean.detProduto.prdISBN}
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <th>
+                                                   Páginas
+                                                </th>
+                                                <td>
+                                                   #{carrinhoBean.detProduto.prdPaginas}
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <th>
+                                                   Edição
+                                                </th>
+                                                <td>
+                                                   #{carrinhoBean.detProduto.prdEdicao}
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <th>
+                                                   Tipo de capa
+                                                </th>
+                                                <td>
+                                                   #{carrinhoBean.tipoCapa}
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <th>
+                                                   Formato
+                                                </th>
+                                                <td>
+                                                   Livro
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <th>
+                                                   Editora
+                                                </th>
+                                                <td>
+                                                   #{carrinhoBean.detProduto.editora.ediNomFantasia}
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <th>
+                                                   Ano
+                                                </th>
+                                                <td>
+                                                   #{carrinhoBean.detProduto.prdAno}
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <th>
+                                                   Assunto
+                                                </th>
+                                                <td>
+                                                   #{carrinhoBean.detProduto.genero.genDescricao}
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <th>
+                                                   Idioma
+                                                </th>
+                                                <td>
+                                                   #{carrinhoBean.detProduto.prdIdioma}
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <th>
+                                                   Código de Barras
+                                                </th>
+                                                <td>
+                                                   #{carrinhoBean.detProduto.prdISBN}
+                                                </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </section>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div id="neemurc_area02" class="grid-control" style="clear:both;"></div>
+                     <div class="grid-control buy-together disable-drag" data-component="compre_junto">
+                     </div>
+                     <div class="ft-wp">
+                        <div class="grid-control" id="opinioes">
+                           <div class="pure-g">
+                              <div class="pure-u-1">
+                                 <div class="model-box">
+                                    <div class="title" data-component="title-box">
+                                       <span class="spt-i-arrow-title"></span>
+                                       <h2 class="t-txt">Opiniões dos Clientes</h2>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                    
+                </h:form>
+                
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

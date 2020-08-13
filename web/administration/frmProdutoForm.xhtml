@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./../ModeloSistema.xhtml">
+
+            <ui:define name="content">
+                
+                <f:view>
+
+
+                    <h:form  class="templatemo-content-widget white-bg w100perc">
+                        
+                        <div class="panel-heading">
+                        
+                            <h1><h:outputText value="Produto" class="margin-bottom-10"/></h1>
+                            
+                        </div>
+                        
+                        <div class="row form-group">
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <p:outputLabel value="Código:" for="prdCodigo" />
+                                <p:inputText id="prdCodigo2" value="#{produtoBean.codigo}" title="PrdCodigo" class="form-control desabilitado" readonly="true"/>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <p:outputLabel value="Título:" for="prdTitulo" />
+                                <p:inputText id="prdTitulo" value="#{produtoBean.produto.prdTitulo}" title="PrdTitulo" class="form-control"/>
+                            </div>
+                        </div> 
+                        
+                        <div class="row form-group">
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <p:outputLabel value="Tipo:" for="prdTipo" />
+
+                                <h:selectOneMenu id ="prdTipo" value="#{produtoBean.produto.prdTipo}" title="prdTipo" class="form-control">
+                                        <f:selectItem itemLabel="Livro" itemValue="L"/>
+                                        <f:selectItem itemLabel="Coleção" itemValue="C"/>
+                                        <f:selectItem itemLabel="Outro" itemValue="O"/>
+                                </h:selectOneMenu>
+                                
+                            </div>
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <p:outputLabel value="Descrição:" for="prdDescricao" />
+                                <p:inputText id="prdDescricao" value="#{produtoBean.produto.prdDescricao}" title="PrdDescricao" class="form-control"/>
+                            </div>
+                        </div>
+                        
+                        <div class="row form-group">
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <p:outputLabel value="ISBN:" for="prdISBN" />
+                                <p:inputText id="prdISBN" value="#{produtoBean.produto.prdISBN}" title="PrdISBN" class="form-control"/>
+                            </div>
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <p:outputLabel value="Nº Paginas:" for="prdPaginas" />
+                                <p:inputText id="prdPaginas" value="#{produtoBean.produto.prdPaginas}" title="PrdPaginas" class="form-control"/>
+                            </div>
+                        </div>
+                        
+                        <div class="row form-group">
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <p:outputLabel value="Edição:" for="prdEdicao" />
+                                <p:inputText id="prdEdicao" value="#{produtoBean.produto.prdEdicao}" title="PrdEdicao" class="form-control"/>
+                            </div>
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <p:outputLabel value="Tipo de Capa:" for="prdTipCapa" />
+                                <h:selectOneMenu id ="prdTipCapa" value="#{produtoBean.produto.prdTipCapa}" title="PrdTipCapa" class="form-control">
+                                        <f:selectItem itemLabel="Brochura" itemValue="B"/>
+                                        <f:selectItem itemLabel="Dura" itemValue="D"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                        
+                        <div class="row form-group">
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <p:outputLabel value="Ano de Publicação:" for="prdAno" />
+                                <p:inputText id="prdAno" value="#{produtoBean.produto.prdAno}" title="PrdAno" class="form-control"/>
+                            </div>
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <p:outputLabel value="Idioma:" for="prdIdioma" />
+                                <p:inputText id="prdIdioma" value="#{produtoBean.produto.prdIdioma}" title="PrdIdioma" class="form-control"/>
+                            </div>
+                        </div>
+                        
+                        <div class="row form-group">
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <p:outputLabel value="Altura:" for="prdAltura" />
+                                <p:inputText id="prdAltura" value="#{produtoBean.produto.prdAltura}" title="PrdAltura" class="form-control"/>
+                            </div>
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <p:outputLabel value="Largura:" for="prdLargura" />
+                                <p:inputText id="prdLargura" value="#{produtoBean.produto.prdLargura}" title="PrdLargura" class="form-control"/>
+                            </div>
+                        </div>
+                        
+                        <div class="row form-group">
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <p:outputLabel value="Comprimento:" for="prdComprimento" />
+                                <p:inputText id="prdComprimento" value="#{produtoBean.produto.prdComprimento}" title="PrdComprimento" class="form-control"/>
+                            </div>
+                            
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <p:outputLabel value="Estoque Físico:" for="prdEstFisico" />
+                                <p:inputText id="prdEstFisico" value="#{produtoBean.produto.prdEstFisico}" title="PrdEstFisico" class="form-control"/>
+                            </div>
+                        </div>
+                        
+                        <div class="row form-group">
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <p:outputLabel value="Gênero:" for="genero" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p:selectOneMenu id="genero" converter="generoConverter" value="#{produtoBean.produto.genero}">
+                                                <!-- TODO: update below reference to list of available items-->
+                                                <f:selectItems var="gen" value="#{produtoBean.generos}"
+                                                               itemLabel="#{gen.genDescricao}"/>
+                                            </p:selectOneMenu>
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                                
+                             </div>   
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <p:outputLabel value="Editora:" for="editora" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p:selectOneMenu id="editora" converter="editoraConverter"
+                                             value="#{produtoBean.produto.editora}" >
+
+                                                <f:selectItems var="edi" value="#{produtoBean.editoras}"
+                                                           itemLabel="#{edi.ediNomFantasia}"/>
+                                            </p:selectOneMenu>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="row form-group">
+                            <div class="col-lg-6 col-md-6 form-group">
+                                <p:outputLabel value="Está em promoção:" for="prdPromocao" />
+                                <h:selectOneMenu id ="prdPromocao" value="#{produtoBean.produto.prdPromocao}" title="PrdPromocao" class="form-control">
+                                        <f:selectItem itemLabel="Não" itemValue="1"/>
+                                        <f:selectItem itemLabel="Sim" itemValue="2"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                        
+                        <h:inputHidden id="prdCodigo" value="#{produtoBean.produto.prdCodigo}"/> 
+                        
+                        <div class="form-group text-right">
+                            
+                            <h:commandButton action="#{produtoBean.salvar()}" value="Salvar" class="templatemo-blue-button" /> &nbsp;
+
+                            <h:button outcome="frmProdutoListar" value="Cancelar" class="templatemo-white-button"/>
+                            
+                        </div>
+                        
+                        
+                    </h:form>
+                </f:view>
+ 
+                
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

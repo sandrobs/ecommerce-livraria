@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./../ModeloSistema.xhtml">
+
+            <ui:define name="content">
+                
+                <f:view>
+                    
+                    <script type="text/javascript" >
+    
+                        function limpa_formulario_cep() {
+                                //Limpa valores do formulário de cep.
+                                document.getElementById('j_idt17:cidade').value=("");
+                                document.getElementById('j_idt17:cidadenom').value=("");
+                        }
+
+                        function meu_callback(conteudo) {
+                            if (!("erro" in conteudo)) {
+                                //Atualiza os campos com os valores.
+                                document.getElementById('j_idt17:cidade').value=(conteudo.ibge);
+                                document.getElementById('j_idt17:cidadenom').value=(conteudo.localidade);
+
+                            } //end if.
+                            else {
+                                //CEP não Encontrado.
+                                limpa_formulario_cep();
+                                alert("CEP não encontrado.");
+                            }
+                        }
+
+                        function pesquisacep(cep) {
+
+                            //Verifica se campo cep possui valor informado.
+                            if (cep !== "") {
+
+                                //Expressão regular para validar o CEP.
+                                var validacep = /^[0-9]{5}-?[0-9]{3}$/;
+
+                                //Valida o formato do CEP.
+                                if(validacep.test(cep)) {
+
+                                    //Preenche os campos com "..." enquanto consulta webservice.
+                                    document.getElementById('j_idt17:cidade').value="...";
+                                    document.getElementById('j_idt17:cidadenom').value="...";
+
+                                    //Cria um elemento javascript.
+                                    var script = document.createElement('script');
+
+                                    //Sincroniza com o callback.
+                                    script.src = '//viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+
+                                    //Insere script no documento e carrega o conteúdo.
+                                    document.body.appendChild(script);
+
+                                } //end if.
+                                else {
+                                    //cep é inválido.
+                                    limpa_formulario_cep();
+                                    alert("Formato de CEP inválido.");
+                                }
+                            } //end if.
+                            else {
+                                //cep sem valor, limpa formulário.
+                                limpa_formulario_cep();
+                            }
+                        };
+
+                    </script>
+                    
+                    
+                    <h:form class="templatemo-content-widget white-bg w100perc">
+                        
+                        <div class="panel-heading">
+                        
+                            <h1><h:outputText value="Editora" class="margin-bottom-10"/></h1>
+                            
+                        </div>
+                        
+                        
+                            <div class="row form-group">
+                                <div class="col-lg-6 col-md-6 form-group">
+                                    <p:outputLabel value="Código:" for="ediCodigo" />
+                                    <p:inputText id="ediCodigo2" value="#{editoraBean.codigo}" title="EdiCodigo"  class="form-control desabilitado" readonly="true"/>
+                                </div>
+                                <div class="col-lg-6 col-md-6 form-group">
+                                    <p:outputLabel value="Razão Social:" for="ediRazSocial" />
+                                    <p:inputText id="ediRazSocial" value="#{editoraBean.editora.ediRazSocial}" title="EdiRazSocial" class="form-control"/>
+                                </div>
+                            </div>
+                                    
+                            
+                        
+                            <div class="row form-group">
+                                
+                                <div class="col-lg-6 col-md-6 form-group">
+                                    <p:outputLabel value="CNPJ:" for="ediCNPJ" />
+                                    <p:inputText id="ediCNPJ" value="#{editoraBean.editora.ediCNPJ}" title="EdiCNPJ" class="form-control"/>
+                                </div>
+                                <div class="col-lg-6 col-md-6 form-group">
+                                    <p:outputLabel value="Nome Fantasia:" for="ediNomFantasia" />
+                                    <p:inputText id="ediNomFantasia" value="#{editoraBean.editora.ediNomFantasia}" title="EdiNomFantasia" class="form-control"/>
+                                </div>
+                            </div>
+                            
+                            <div class="row form-group">
+                                <div class="col-lg-6 col-md-6 form-group">
+                                    <p:outputLabel value="Email:" for="ediEmail" />
+                                    <p:inputText id="ediEmail" value="#{editoraBean.editora.ediEmail}" title="EdiEmail" class="form-control"/>
+                            
+                                </div>
+                                <div class="col-lg-6 col-md-6 form-group">
+                                    <p:outputLabel value="telefone" for="ediFone" />
+                                    <p:inputText id="ediFone" value="#{editoraBean.editora.ediFone}" title="EdiFone" class="form-control"/>
+                                </div>
+                            </div>
+                        
+                            <div class="row form-group">
+                                <div class="col-lg-6 col-md-6 form-group">
+                                    <p:outputLabel value="Linha Editorial:" for="ediLinEditorial" />
+                                    <p:inputText id="ediLinEditorial" value="#{editoraBean.editora.ediLinEditorial}" title="EdiLinEditorial" class="form-control"/>
+                                </div>
+                            </div>
+                        
+                            <div class="row form-group">
+                                <div class="col-lg-6 col-md-6 form-group">
+                                    <p:outputLabel value="CEP:" for="ediCEP" />
+                                    <p:inputText id="ediCEP" value="#{editoraBean.editora.ediCEP}" title="EdiCEP" class="form-control" onblur="pesquisacep(this.value);"/>
+                                </div>
+                                <div class="col-lg-6 col-md-6 form-group">
+                                    <p:outputLabel value="Endereço" for="ediEndereco" />
+                                    <p:inputText id="ediEndereco" value="#{editoraBean.editora.ediEndereco}" title="EdiEndereco" class="form-control"/>
+                                </div>
+                            </div>
+                        
+                            <div class="row form-group">
+                                
+                                <div class="col-lg-6 col-md-6 form-group">
+                                    <p:outputLabel value="Número:" for="ediNumero" />
+                                    <p:inputText id="ediNumero" value="#{editoraBean.editora.ediNumero}" title="EdiNumero" class="form-control"/>
+                                </div>
+                                
+                                <div class="col-lg-6 col-md-6 form-group">
+                                    <p:outputLabel value="Complemento:" for="ediComplemento" />
+                                    <p:inputText id="ediComplemento" value="#{editoraBean.editora.ediComplemento}" title="EdiComplemento" class="form-control"/>
+                                </div>
+                                
+                            </div>
+                        
+                            <div class="row form-group">
+                                <div class="col-lg-6 col-md-6 form-group">
+                                    <p:outputLabel value="Bairro:" for="ediBairro" />
+                                    <p:inputText id="ediBairro" value="#{editoraBean.editora.ediBairro}" title="EdiBairro" class="form-control"/>
+                                </div>
+                            </div>                                   
+                            
+                        
+                            <div class="row form-group">
+                                <div class="col-lg-6 col-md-6 form-group">
+                                    <p:outputLabel value="Cidade:" for="cidade" />
+                                    <p:inputText id="cidadenom" value="#{editoraBean.nomeCid}" title="EdiCidade" class="form-control desabilitado" readonly="true" />                                    
+                                </div>
+                            </div>
+                        
+                            <h:inputHidden id="cidade" value="#{editoraBean.ibge}" />
+                            <h:inputHidden id="ediCodigo" value="#{editoraBean.editora.ediCodigo}"/>
+                        
+                            <div class="form-group text-right">
+                                <h:commandButton action="#{editoraBean.salvar()}" value="Salvar" class="templatemo-blue-button">
+                                    
+                                </h:commandButton> &nbsp;
+                                
+                                <h:button outcome="frmEditoraListar" value="Cancelar" class="templatemo-white-button"/>
+                            </div>
+                    </h:form>
+                </f:view>
+
+                
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <body>
+
+        <ui:composition template="./../ModeloSistema.xhtml">
+
+            <ui:define name="content">
+                
+                <div class="templatemo-flex-row flex-content-row">
+                    <div class="col-1">              
+                        <div class="templatemo-content-widget pink-bg" onclick="javascript:location.href='frmGeneroListar.xhtml'">
+                            <h2 class="text-uppercase margin-bottom-10">Gêneros</h2>
+                            <p class="margin-bottom-0">Consulta de Manutenção de Gêneros</p>                  
+                      </div>            
+                      <div class="templatemo-content-widget blue-bg" onclick="javascript:location.href='frmEditoraListar.xhtml'">
+                            <h2 class="text-uppercase margin-bottom-10">Editoras</h2>
+                            <p class="margin-bottom-0">Consulta e manutenção de Editoras</p>                
+                      </div>            
+                    </div>                       
+                </div>
+                <div class="templatemo-flex-row flex-content-row">
+                    <div class="col-1">              
+                        <div class="templatemo-content-widget orange-bg" onclick="javascript:location.href='frmFormaPagamentoListar.xhtml'">
+                            <h2 class="text-uppercase margin-bottom-10">Forma de Pagamento</h2>
+                            <p class="margin-bottom-0">Consulta e Manutenção de Formas de Pagamento</p>                  
+                      </div>            
+                      <div class="templatemo-content-widget green-bg" onclick="javascript:location.href='frmProdutoListar.xhtml'">
+                            <h2 class="text-uppercase margin-bottom-10">Produtos</h2>
+                            <p class="margin-bottom-0">Consulta e manutenção de Produtos</p>                
+                      </div>            
+                    </div>                       
+                </div>
+                <div class="templatemo-flex-row flex-content-row">
+                    <div class="col-1">              
+                        <div class="templatemo-content-widget purple-bg" onclick="javascript:location.href='frmCidadeListar.xhtml'">
+                            <h2 class="text-uppercase margin-bottom-10">Cidades</h2>
+                            <p class="margin-bottom-0">Consulta de Manutenção de Cidades</p>                  
+                      </div>            
+                      <div class="templatemo-content-widget yellowdark-bg" onclick="javascript:location.href='frmEstadoListar.xhtml'">
+                            <h2 class="text-uppercase margin-bottom-10">Estados</h2>
+                            <p class="margin-bottom-0">Consulta e manutenção de Estados</p>                
+                      </div>            
+                    </div>                       
+                </div>
+                
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
